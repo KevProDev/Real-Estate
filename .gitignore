@@ -3,6 +3,7 @@
 
 node_modules
 node_modules/
+
 ### CodeKit ###
 # General CodeKit files to ignore
 config.codekit

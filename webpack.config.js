@@ -2,17 +2,14 @@
 const path = require('path');
 const webpack = require('webpack')
 
-const VENDOR_LIBS = [
-  'redux', 'react-redux', 'react-dom'
-]
+
 
 module.exports = {
   entry: {
-    realEstate: './assets/js/realEstate/realEstate.js',
-    vendor: VENDOR_LIBS
+    realEstate: './assets/js/realEstate/realEstate.js'
   },
   output: { filename: '[name].js',
-            path: path.resolve(__dirname, 'public/js/components') },
+            path: path.resolve(__dirname, 'public') },
   module: {
     rules: [
       {
@@ -41,15 +38,7 @@ module.exports = {
             }]
         }
     ]
-  },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
-        minChunks: function (module) {
-           // this assumes your vendor imports exist in the node_modules directory
-           return module.context && module.context.indexOf('node_modules') !== -1;
-        }
-    }),
+  }
 //         new webpack.optimize.UglifyJsPlugin({
 //   sourceMap: options.devtool && (options.devtool.indexOf("sourcemap") >= 0 || options.devtool.indexOf("source-map") >= 0)
 // }),
@@ -57,5 +46,5 @@ module.exports = {
     // new webpack.optimize.CommonsChunkPlugin({
     //     name: 'manifest' //But since there are no more common modules between them we end up with just the runtime code included in the manifest file
     // })
-]
+
 };

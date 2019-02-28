@@ -36,11 +36,13 @@
     "sass-loader": "^6.0.3",
     "standard": "^10.0.2",
     "webpack": "^2.5.1",
+    "webpack-cli": "^3.2.3",
     "webpack-stream": "^3.2.0"
   },
   "scripts": {
     "bundle": "./node_modules/.bin/webpack",
     "production": "./node_modules/.bin/webpack -p",
+    "build": "webpack --mode production",
     "watch": "gulp",
     "sass": "gulp styles",
     "js": "gulp webpack"

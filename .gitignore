@@ -1,14 +1,13 @@
 # Created by https://www.gitignore.io/api/sass,macos,codekit
 
 
-node_modules
-node_modules/
 
+node_modules/
 ### CodeKit ###
 # General CodeKit files to ignore
 config.codekit
 config.codekit3
-/min
+
 
 ### CodeKit Patch ###
 */codekit-config.json

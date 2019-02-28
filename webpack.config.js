@@ -1,6 +1,9 @@
 
 const path = require('path');
 const webpack = require('webpack')
+const htmlpack = require('html-webpack-plugin')
+
+// const srcDir = resolve(__dirname, 'src')
 
 
 
@@ -9,7 +12,7 @@ module.exports = {
     realEstate: './assets/js/realEstate/realEstate.js'
   },
   output: { filename: '[name].js',
-            path: path.resolve(__dirname, 'public') },
+            path: path.resolve(__dirname, 'dist') },
   module: {
     rules: [
       {
@@ -38,7 +41,12 @@ module.exports = {
             }]
         }
     ]
-  }
+  },
+  plugins: [
+    new htmlpack({
+      template: "./index.html"
+    })
+  ]
 //         new webpack.optimize.UglifyJsPlugin({
 //   sourceMap: options.devtool && (options.devtool.indexOf("sourcemap") >= 0 || options.devtool.indexOf("source-map") >= 0)
 // }),

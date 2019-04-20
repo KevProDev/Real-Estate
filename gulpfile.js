@@ -11,7 +11,7 @@ var exec = require('child_process').exec;
 gulp.task('default', ['styles', 'webpack', 'browser-sync'], () => {
   gulp.watch('./assets/sass/**/*', ['styles'])
   gulp.watch('./assets/js/**/*', ['webpack'])
-  gulp.watch(['./public/**/*', './public/*', '!public/js/**/.#*js', '!public/css/**/.#*css']).on('change', reload)
+  gulp.watch(['./dist/**/*', './dist/*', '!dist/js/**/.#*js', '!dist/css/**/.#*css']).on('change', reload)
 })
 
 gulp.task('styles', () => {
@@ -24,7 +24,7 @@ gulp.task('styles', () => {
     .pipe(autoprefixer({
       browsers: ['last 2 versions']
     }))
-    .pipe(gulp.dest('./public/css'))
+    .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.stream())
 })
 
@@ -39,7 +39,7 @@ gulp.task('browser-sync', ['styles'], function () {
 //   // })
 
   browserSync.init({
-        server: './public',
+        server: './dist',
         notify: false,
         open: false
         

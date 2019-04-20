@@ -32,6 +32,12 @@
     width: 25%;
     display: inline-block;
   }
+  @media screen and (max-width: 900px) {
+    select{
+      height: initial;
+      padding: 6px;
+    }
+  }
 
   @media screen and (max-width: 400px) {
     select{
@@ -84,7 +90,7 @@
 
 
 #listings{
-  width: 90%;
+  width: 70%;
   margin: auto;
   // float: left;
   // display: inline-block;
@@ -101,6 +107,15 @@
       margin-bottom: 20px;
       font-weight: 100;
       color: $darkgrey;
+      padding-left: 40px;
+      font-weight: 300;
+      color: black;
+    }
+    @media screen and (max-width: 900px) {
+      input[type="text"]{
+        width: 80%;
+        font-size: 1.8rem;
+      }
     }
   }
 
@@ -126,12 +141,23 @@
         margin-right: 15px;
         vertical-align: top;
       }
+      @media screen and (max-width: 900px) {
+        select{
+          padding: 2px;
+        }
+      }
       .view{
         display: inline-block;
 
         .fas{
           font-size: 1.5rem;
           margin-right: 15px;
+        }
+
+        @media screen and (max-width: 900px) {
+          .fa-th{
+            display: none;
+          }
         }
         
       }
@@ -403,7 +429,7 @@
   font-size: .9rem;
   border-radius: 5px;
   text-align: center;
-  min-width: 150px;
+  min-width: 99px;
   cursor: pointer;
   display: inline-block;
   transition: background .3s ease-in-out;
